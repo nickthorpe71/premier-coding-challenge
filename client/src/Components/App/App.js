@@ -6,10 +6,9 @@ import ApiService from '../../Services/api-service';
 import './App.css';
 
 const App = () => {
-  const [results, setResults] = useState('');
+  const [results, setResults] = useState([]);
 
   const onSubmitForm = (data) => {
-    console.log(data);
     const wps = [];
 
     for (const key in data)
@@ -17,10 +16,23 @@ const App = () => {
         wps.push(data[key]);
 
     ApiService.getRoute(data.office, wps)
-      .then(data => {
-        console.log(data);
+      .then(res => {
+        const formattedRes = [];
+        for (const key in res) {
+          formattedRes.push(res[key]);
+        }
+        setResults(formattedRes);
       });
-    // setResults(data);
+
+  };
+
+  const renderResults = () => {
+    return results.map(waypoint => {
+      return (<li>{`
+      destination:${waypoint.destination}
+      distance:${waypoint.distance}
+      `}</li>);
+    });
   };
 
   const { register, handleSubmit } = useForm();
@@ -49,7 +61,7 @@ const App = () => {
           <input type="submit" value="Find" />
         </form>
         <ol className="results">
-          {results}
+          {renderResults()}
         </ol>
       </main>
     </div>

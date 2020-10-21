@@ -11,10 +11,13 @@ const GoogleService = {
         let orderedWaypoints = {};
 
         // the last item in the list of legs is the same as the origin so it is excluded
-        for (let i = 0; i < legs.length - 1; i++) {
+        for (let i = 0; i < legs.length; i++) {
           const destination = legs[i].end_address;
-          const distance = legs[i].distance;
-          orderedWaypoints[destination] = distance.text;
+          const distance = legs[i].distance.text;
+          orderedWaypoints[i] = {
+            destination,
+            distance
+          };
         }
 
         return orderedWaypoints;
