@@ -7,14 +7,19 @@ const GoogleService = {
 
     return axios.get(url)
       .then(response => {
-        console.log(response.data.url);
-        console.log(response.data.explanation);
-        return response.data;
+        let legs = response.data.routes[0].legs;
+        let orderedWaypoints = {};
+
+        for (let i = 0; i < legs.length - 1; i++) {
+
+          const destination = legs[i].end_address;
+          const distance = legs[i].distance;
+          orderedWaypoints[destination] = distance.text;
+        }
+
+        return orderedWaypoints;
       })
-      .catch(error => {
-        console.log(error);
-        return error;
-      });
+      .catch(error => error);
   }
 };
 

@@ -31,7 +31,7 @@ app.get('/route', (req, res, next) => {
   GoogleService.getRoute(requestObj)
     .then(data => {
       console.log('TEST DATA -----', data);
-      res.status(200).send(data);
+      res.status(200).json(data);
     })
     .catch(next);
 });
