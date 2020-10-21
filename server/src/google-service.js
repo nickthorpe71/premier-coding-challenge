@@ -10,8 +10,8 @@ const GoogleService = {
         let legs = response.data.routes[0].legs;
         let orderedWaypoints = {};
 
+        // the last item in the list of legs is the same as the origin so it is excluded
         for (let i = 0; i < legs.length - 1; i++) {
-
           const destination = legs[i].end_address;
           const distance = legs[i].distance;
           orderedWaypoints[destination] = distance.text;
@@ -26,9 +26,9 @@ const GoogleService = {
 const buildURL = (office, waypoints) => {
   const base = 'https://maps.googleapis.com/maps/api/directions/json?';
   const units = 'units=imperial';
-  const origin = `origin=${office}`;
+  const origin = `origin=optimize:true|${office}`;
   const destination = `destination=${origin}`;
-  const wps = `waypoints=${waypoints}`;
+  const wps = `waypoints=optimize:true|${waypoints}`;
 
   return `${base}${units}&${origin}&${wps}&${destination}&key=${API_KEY}`;
 };

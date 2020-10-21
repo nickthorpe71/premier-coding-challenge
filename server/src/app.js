@@ -22,15 +22,10 @@ app.get('/route', (req, res, next) => {
   console.log(req.query);
 
   const { origin, waypoints } = req.query;
-
-  const requestObj = {
-    origin,
-    waypoints,
-  };
+  const requestObj = { origin, waypoints };
 
   GoogleService.getRoute(requestObj)
     .then(data => {
-      console.log('TEST DATA -----', data);
       res.status(200).json(data);
     })
     .catch(next);

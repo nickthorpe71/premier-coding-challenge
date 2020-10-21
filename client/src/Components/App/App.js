@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 // import Waypoint from '../Waypoint/Waypoint';
-import GmapsService from '../../Services/gmaps-service';
+import ApiService from '../../Services/api-service';
 
 import './App.css';
 
@@ -16,7 +16,7 @@ const App = () => {
       if (key !== 'office')
         wps.push(data[key]);
 
-    GmapsService.getRoute(data.office, wps)
+    ApiService.getRoute(data.office, wps)
       .then(data => {
         console.log(data);
       });
