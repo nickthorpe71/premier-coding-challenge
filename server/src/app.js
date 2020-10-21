@@ -6,6 +6,8 @@ const cors = require('cors');
 const helmet = require('helmet');
 const { NODE_ENV } = require('./config');
 
+const GoogleService = require('./google-service');
+
 const app = express();
 
 const morganOption = (NODE_ENV === 'production')
@@ -16,8 +18,22 @@ app.use(morgan(morganOption));
 app.use(helmet());
 app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send('Hello, world!');
+app.get('/route', (req, res, next) => {
+  console.log(req.query);
+
+  const { origin, waypoints } = req.query;
+
+  const requestObj = {
+    origin,
+    waypoints,
+  };
+
+  GoogleService.getRoute(requestObj)
+    .then(data => {
+      console.log('TEST DATA -----', data);
+      res.status(200).send(data);
+    })
+    .catch(next);
 });
 
 // eslint-disable-next-line no-unused-vars
