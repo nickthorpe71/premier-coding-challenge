@@ -1,24 +1,119 @@
-.App {
-  text-align: center;
-}
 
-.App-header {
+
+/* .App-header {
   background-color: #282c34;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+} */
+
+.App{
+  background-color: #e0e2e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vw;
+  font-size: calc(5px + 2vmin);
+  max-height: 800px;
 }
 
 .App-body {
-  background-color: #282c34;
+  background: #F9F9F9;
+  padding: 25px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  width: 80vw;
+  max-width: 500px;
+}
+
+.App h1{
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  font-weight: 400;
+}
+
+.App h2{
+  font-size: calc(5px + 2vmin);
+  font-weight: 100;
+  align-self: flex-start;
+  margin: calc(2px + 1vmin) 0 0 0;
+}
+
+.App .address-form{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
+.App #stop{
+  font-size: calc(3px + 1.5vmin);
+  margin: calc(2px + 1vmin);
+  padding: calc(1px + 2vmin);
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.App #office{
+  font-size: calc(3px + 1.5vmin);
+  margin: calc(2px + 1vmin);
+  padding: calc(1px + 2vmin);
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.App #office:hover, #stop:hover {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+  border: 1px solid rgb(138, 138, 138);
+}
+
+.App #office:focus, #stop:focus {
+  outline: 0;
+  border: 1px solid rgb(124, 124, 124);
+}
+
+.App #submit-button{
+  font-size: calc(5px + 1.5vmin);
+  padding: calc(1px + 2vmin);
+  margin: calc(2px + 1vmin);
+  background: #57c4f0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  color: #FFF;
+  font-weight: 400;
+}
+
+.App #loading{
+  font-size: calc(5px + 1.5vmin);
+  padding: calc(1px + 2vmin);
+  margin: calc(2px + 1vmin);
+  width: 100%;
+}
+
+.App #submit-button:hover{
+  background: #52b3da;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.App #submit-button:active{
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.App .results{
+  background-color: #FFF;
+}
+
+@media screen and (min-width: 800px) {
+  .App{
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+}

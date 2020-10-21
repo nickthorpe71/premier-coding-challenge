@@ -36,8 +36,6 @@ const formatAddress = (address) => {
     newAddress = newAddress.replace(/ /g, "+");
   }
 
-
-
   return newAddress;
 };
 
