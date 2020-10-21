@@ -15,7 +15,7 @@ const GmapsService = {
 
 const buildURL = (office, waypoints) => {
   const base = 'https://maps.googleapis.com/maps/api/directions/json?';
-
+  const API_KEY = 'key=';
   const units = 'units=imperial';
   const origin = `origin=optimize:true|${formatAddress(office)}`;
   const destination = `destination=${origin}`;
