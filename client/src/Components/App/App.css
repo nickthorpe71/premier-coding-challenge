@@ -70,6 +70,7 @@
 }
 
 .App #submit-button{
+  -webkit-appearance: none;
   font-size: calc(5px + 2vmin);
   padding: calc(1px + 2vmin);
   margin: calc(2px + 1vmin);
