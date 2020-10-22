@@ -7,11 +7,13 @@ import './App.css';
 
 const App = () => {
   const [results, setResults] = useState([]);
+  const [display, setDisplay] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const onSubmitForm = (data) => {
     const wps = [];
     setLoading(true);
+    setDisplay(false);
 
     for (const key in data)
       if (key !== 'office')
@@ -28,6 +30,7 @@ const App = () => {
         }
         setResults(formattedRes);
         setLoading(false);
+        setDisplay(true);
       });
   };
 
@@ -60,13 +63,16 @@ const App = () => {
           <input type="text" name="address5" id="stop" ref={register} placeholder="123 Main St, City, State ZIP" />
           <label htmlFor="address6" />
           <input type="text" name="address6" id="stop" ref={register} placeholder="123 Main St, City, State ZIP" />
-          {loading ? <p id="loading">Loading...</p> : <input id="submit-button" type="submit" value="Find Route" />}
+          {loading ? <p id="loading">Calculating fastest route...</p> : <input id="submit-button" type="submit" value="Find Route" />}
         </form>
-        {!loading
+        {display
           ?
-          <ol className="results">
-            {renderResults()}
-          </ol>
+          <div className="results">
+            <h3>Stops</h3>
+            <ol >
+              {renderResults()}
+            </ol>
+          </div>
           :
           <></>
         }

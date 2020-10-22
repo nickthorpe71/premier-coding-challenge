@@ -32,7 +32,8 @@ body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 100;
   color: #777;
-  background-color: #e0e2e6;
+  background-color: #f2f2f3;
+  overflow: auto;
 }
 
 code {

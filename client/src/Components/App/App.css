@@ -12,20 +12,19 @@
 } */
 
 .App{
-  background-color: #e0e2e6;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10vw;
   font-size: calc(5px + 2vmin);
-  max-height: 800px;
+  margin-top: 7vh;
+  margin-bottom: 7vh;
 }
 
 .App-body {
   background: #F9F9F9;
-  padding: 25px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  width: 80vw;
+  padding: calc(15px + 3vmin);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+  width: 70vw;
   max-width: 500px;
 }
 
@@ -40,6 +39,12 @@
   font-weight: 100;
   align-self: flex-start;
   margin: calc(2px + 1vmin) 0 0 0;
+}
+
+.App h3{
+  font-size: calc(7px + 2vmin);
+  font-weight: 400;
+  align-self: flex-start;
 }
 
 .App .address-form{
@@ -78,10 +83,10 @@
 }
 
 .App #submit-button{
-  font-size: calc(5px + 1.5vmin);
+  font-size: calc(5px + 2vmin);
   padding: calc(1px + 2vmin);
   margin: calc(2px + 1vmin);
-  background: #57c4f0;
+  background: #40afdb;
   border: none;
   cursor: pointer;
   width: 100%;
@@ -93,11 +98,12 @@
   font-size: calc(5px + 1.5vmin);
   padding: calc(1px + 2vmin);
   margin: calc(2px + 1vmin);
+  font-weight: 400;
   width: 100%;
 }
 
 .App #submit-button:hover{
-  background: #52b3da;
+  background: rgb(73, 167, 204);
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
@@ -107,13 +113,38 @@
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.App .results{
-  background-color: #FFF;
+.App ol {
+  list-style: none;
+  counter-reset: steps;
 }
 
-@media screen and (min-width: 800px) {
-  .App{
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-  }
+.App ol li{
+  counter-increment: steps;
+  margin-top: 1em;
+}
+
+.App ol li::before {
+  content: counter(steps);
+  margin-right: 0.5rem;
+  background: #40afdb;
+  color: white;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  line-height: 1.2em;
+  font-weight: 400;
+}
+
+.App .results{
+  background-color: #FFF;
+  padding: calc(15px + 2vmin);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
+  width: 100%;
+  margin: 0.5rem auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
 }
