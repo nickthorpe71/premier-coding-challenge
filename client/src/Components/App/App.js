@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-// import Waypoint from '../Waypoint/Waypoint';
 import ApiService from '../../Services/api-service';
 
 import './App.css';
