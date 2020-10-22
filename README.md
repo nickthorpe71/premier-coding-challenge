@@ -4,9 +4,7 @@
 https://premier-coding-challenge.vercel.app/
 
 ## Intro
-This application uses the Google Maps API directions endpoint and built in optimization function to calculate the fastest rouve from a start location, to 6 waypoints and back to the start location. This method considers distance, time, and other factors to get the fastest time per googles documentation. 
-
-The alternative solution I found was to use the distance matrix endpoint and determine all possible distances from each waypoint to the others. This would require a graph algorithm on the server where the nodes are the destinations and the edges are weighted by distance.
+This application uses the Google Maps API directions endpoint and built in optimization function to calculate the fastest route from a start location, to 6 waypoints and back to the start location.
 
 ## Local Setup
 This is not necessary, but if you would like to run the client and server locally, follow these steps.
