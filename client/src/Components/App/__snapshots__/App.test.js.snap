@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component Snapshot test Renders the UI as expected 1`] = `
+<div
+  className="App"
+>
+  <main
+    className="App-body"
+  >
+    <h1>
+      Route Finder
+    </h1>
+    <form
+      className="address-form"
+      onSubmit={[Function]}
+    >
+      <h2>
+        Office
+      </h2>
+      <label
+        htmlFor="office"
+      />
+      <input
+        id="office"
+        name="office"
+        placeholder="123 Main St, City, State ZIP"
+        required={true}
+        type="text"
+      />
+      <h2>
+        Stops
+      </h2>
+      <label
+        htmlFor="address1"
+      />
+      <input
+        id="stop"
+        name="address1"
+        placeholder="123 Main St, City, State ZIP"
+        type="text"
+      />
+      <label
+        htmlFor="address2"
+      />
+      <input
+        id="stop"
+        name="address2"
+        placeholder="123 Main St, City, State ZIP"
+        type="text"
+      />
+      <label
+        htmlFor="address3"
+      />
+      <input
+        id="stop"
+        name="address3"
+        placeholder="123 Main St, City, State ZIP"
+        type="text"
+      />
+      <label
+        htmlFor="address4"
+      />
+      <input
+        id="stop"
+        name="address4"
+        placeholder="123 Main St, City, State ZIP"
+        type="text"
+      />
+      <label
+        htmlFor="address5"
+      />
+      <input
+        id="stop"
+        name="address5"
+        placeholder="123 Main St, City, State ZIP"
+        type="text"
+      />
+      <label
+        htmlFor="address6"
+      />
+      <input
+        id="stop"
+        name="address6"
+        placeholder="123 Main St, City, State ZIP"
+        type="text"
+      />
+      <input
+        id="submit-button"
+        type="submit"
+        value="Find Route"
+      />
+    </form>
+  </main>
+</div>
+`;
