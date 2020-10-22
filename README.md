@@ -8,11 +8,12 @@ This application uses the Google Maps API directions endpoint and built in optim
 
 The alternative solution I found was to use the distance matrix endpoint and determine all possible distances from each waypoint to the others. This would require a graph algorithm on the server where the nodes are the destinations and the edges are weighted by distance.
 
+## Local Setup
+This is not necessary, but if you would like to run the client and server locally, follow these steps.
+1. Clone repo
+2. For both the client and server install the node dependencies with npm install 
+
 ## Client
-
-### Setup
-
-Install the node dependencies with npm install
 
 ### Available Scripts
 
@@ -31,10 +32,6 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.
 
 ## Server
-
-### Setup
-
-Install the node dependencies with npm install
 
 ### Available Scripts
 
