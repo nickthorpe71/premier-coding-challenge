@@ -14,7 +14,7 @@ const ApiService = {
 };
 
 const buildURL = (office, waypoints) => {
-  const base = 'http://localhost:8000/route';
+  const base = 'https://warm-everglades-02341.herokuapp.com/route';
   const origin = `origin=${formatAddress(office)}`;
   const wps = `waypoints=${waypoints.map((waypoint) => {
     return formatAddress(waypoint);
